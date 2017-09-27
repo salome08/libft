@@ -1,0 +1,182 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: shazan <shazan@student.42.fr>              +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2015/11/27 11:23:48 by shazan            #+#    #+#              #
+#    Updated: 2016/02/22 15:49:32 by shazan           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+.PHONY: all, fclean, clean, re
+
+NAME = libft.a
+
+SRC = $(STR)/ft_atoi.c
+SRC += $(STR)/ft_bzero.c
+SRC += $(STR)/ft_isalnum.c
+SRC += $(STR)/ft_isalpha.c
+SRC += $(STR)/ft_isascii.c
+SRC += $(STR)/ft_isblank.c
+SRC += $(STR)/ft_isblank2.c
+SRC += $(STR)/ft_isdigit.c
+SRC += $(STR)/ft_ispace.c
+SRC += $(STR)/ft_isprint.c
+SRC += $(STR)/ft_itoa.c
+SRC += $(STR)/ft_putchar_fd.c
+SRC += $(STR)/ft_putnchar_fd.c
+SRC += $(STR)/ft_putchar.c
+SRC += $(STR)/ft_putendl_fd.c
+SRC += $(STR)/ft_putendl.c
+SRC += $(STR)/ft_putnbr_fd.c
+SRC += $(STR)/ft_putnbr.c
+SRC += $(STR)/ft_putstr_fd.c
+SRC += $(STR)/ft_putstr.c
+SRC += $(STR)/ft_strcat.c
+SRC += $(STR)/ft_strchr.c
+SRC += $(STR)/ft_strclean.c
+SRC += $(STR)/ft_strclr.c
+SRC += $(STR)/ft_strcmp.c
+SRC += $(STR)/ft_strcpy.c
+SRC += $(STR)/ft_strdel.c
+SRC += $(STR)/ft_strdup.c
+SRC += $(STR)/ft_strequ.c
+SRC += $(STR)/ft_striter.c
+SRC += $(STR)/ft_striteri.c
+SRC += $(STR)/ft_strjoin.c
+SRC += $(STR)/ft_strlcat.c
+SRC += $(STR)/ft_strlen.c
+SRC += $(STR)/ft_strclean.c
+SRC += $(STR)/ft_strmap.c
+SRC += $(STR)/ft_strmapi.c
+SRC += $(STR)/ft_strncat.c
+SRC += $(STR)/ft_strncmp.c
+SRC += $(STR)/ft_strncpy.c
+SRC += $(STR)/ft_strndup.c
+SRC += $(STR)/ft_strnequ.c
+SRC += $(STR)/ft_strnew.c
+SRC += $(STR)/ft_strnstr.c
+SRC += $(STR)/ft_strrchr.c
+SRC += $(STR)/ft_strrealloc.c
+SRC += $(STR)/ft_strsplit_spc.c
+SRC += $(STR)/ft_strsplit.c
+SRC += $(STR)/ft_strstr.c
+SRC += $(STR)/ft_strsub.c
+SRC += $(STR)/ft_strtrim_spc.c
+SRC += $(STR)/ft_strtrim.c
+SRC += $(STR)/ft_tolower.c
+SRC += $(STR)/ft_toupper.c
+SRC += $(STR)/ft_swap.c
+SRC += $(STR)/ft_isnumeric.c
+SRC += $(STR)/ft_pow.c
+#
+# memory manager function file
+SRC += $(MEMORY)/ft_memalloc.c
+SRC += $(MEMORY)/ft_memccpy.c
+SRC += $(MEMORY)/ft_memchr.c
+SRC += $(MEMORY)/ft_memcmp.c
+SRC += $(MEMORY)/ft_memcpy.c
+SRC += $(MEMORY)/ft_memdel.c
+SRC += $(MEMORY)/ft_memmove.c
+SRC += $(MEMORY)/ft_memset.c
+SRC += $(MEMORY)/ft_calloc.c
+SRC += $(MEMORY)/ft_xmalloc.c
+SRC += $(MEMORY)/ft_xrealloc.c
+SRC += $(MEMORY)/ft_memshow.c
+SRC += $(MEMORY)/ft_mem_isequal.c
+
+#
+# getoption function file
+SRC += $(GETSTR)/ft_getopt.c
+SRC += $(GETSTR)/get_next_line.c
+
+#
+# list function file
+SRC += $(LIST)/ft_lstnew.c
+SRC += $(LIST)/ft_lstdelone.c
+SRC += $(LIST)/ft_lstdel.c
+SRC += $(LIST)/ft_lstadd.c
+SRC += $(LIST)/ft_lstadd_back.c
+SRC += $(LIST)/ft_lstiter.c
+SRC += $(LIST)/ft_lstmap.c
+
+# ft_printf function file
+SRC += $(PTF)/ft_printf.c
+SRC += $(PTF)/ft_vfdprintf.c
+SRC += $(PTF)/ft_fdprintf.c
+SRC += $(PTF)/ft_abs.c
+SRC += $(PTF)/ft_strtol.c
+SRC += $(PTF)/ft_strpos.c
+SRC += $(PTF)/ft_fill.c
+SRC += $(PTF)/ft_putnbrl_fd.c
+SRC += $(PTF)/ft_getargsize.c
+SRC += $(PTF)/ft_log.c
+SRC += $(PTF)/ft_printp.c
+SRC += $(PTF)/ft_printmod.c
+SRC += $(PTF)/ft_printsmall_di.c
+SRC += $(PTF)/ft_printsmall_s.c
+SRC += $(PTF)/ft_printsmall_b.c
+SRC += $(PTF)/ft_printsmall_x.c
+SRC += $(PTF)/ft_printsmall_o.c
+SRC += $(PTF)/ft_printsmall_u.c
+SRC += $(PTF)/ft_precisionwidth_tos.c
+SRC += $(PTF)/ft_precisionwidth_tocu.c
+SRC += $(PTF)/ft_precisionwidth_too.c
+SRC += $(PTF)/ft_precisionwidth_todi.c
+SRC += $(PTF)/ft_precisionwidth_tox.c
+SRC += $(PTF)/ft_calclen_s.c
+SRC += $(PTF)/ft_calclen_x.c
+SRC += $(PTF)/ft_calclen_p.c
+SRC += $(PTF)/ft_calclen_di.c
+SRC += $(PTF)/ft_calclen_o.c
+SRC += $(PTF)/ft_precisionwidth_top.c
+SRC += $(PTF)/ft_calclen_upocu.c
+SRC += $(PTF)/ft_calclen_x.c
+SRC += $(PTF)/ft_diezflag_tos.c
+SRC += $(PTF)/ft_diezflag_toupocu.c
+SRC += $(PTF)/ft_diezflag_too.c
+SRC += $(PTF)/ft_diezflag_todi.c
+SRC += $(PTF)/ft_diezflag_top.c
+SRC += $(PTF)/ft_diezflag_tox.c
+SRC += $(PTF)/ft_printc.c
+SRC += $(PTF)/ft_error.c
+SRC += $(PTF)/ft_isint.c
+SRC += $(PTF)/ft_isnumber.c
+SRC += $(PTF)/ft_atolli.c
+SRC += $(PTF)/ft_swapstr.c
+SRC += $(PTF)/ft_swapint.c
+
+OBJ = $(SRC:.c=.o)
+
+GCC = gcc -Wall -Wextra -Werror
+
+all: $(NAME)
+
+$(NAME):
+		@echo "\033[33m----------------------------------\033[0m"
+		@echo "\033[36mCompiling in .o\033[0m"
+		@$(GCC) -c $(SRC) $(HEAD)
+		@echo "\033[36mCreating library\033[0m"
+		@ar rc $(NAME) $(OBJ)
+		@echo "\033[36mIncrease the search speed\033[0m"
+		@ranlib $(NAME)
+		@echo "\033[32mLibrary Created\033[0m"
+		@echo "\033[33m----------------------------------\033[0m"
+
+clean:
+	@echo "\033[33m----------------------------------\033[0m"
+	@echo "\033[31mDeleting all .o\033[31m"
+	@rm -rf $(OBJ)
+	@echo "\033[32mThe folder is clean !\033[32m"
+	@echo "\033[33m----------------------------------\033[0m"
+
+fclean:
+	@echo "\033[33m----------------------------------\033[0m"
+	@echo "\033[31mDeleting Library.a and all .o\033[31m"
+	@rm -rf $(NAME) $(OBJ)
+	@echo "\033[32mThe folder is clean\033[32m"
+	@echo "\033[33m----------------------------------\033[0m"
+
+re: fclean all
